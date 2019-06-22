@@ -1,0 +1,6 @@
+@startuml
+       Input -> RequestQueue: read and add request to queue
+       Input -> RequestQueue: if input ctrl+D set stop=true
+       RequestQueue -> Elevator: get Request and solve it
+       RequestQueue -> Elevator: if stop=true && queue.isEmpty Elevator end
+@enduml

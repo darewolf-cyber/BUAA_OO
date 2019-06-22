@@ -1,0 +1,8 @@
+@startuml
+Input -> RequestQueue: read and add request to RequestQueue
+Input -> RequestQueue: if input ctrl+D set stop=true
+RequestQueue -> Schedule: get Request and assign to Elevator
+RequestQueue -> Schedule: if stop=true && queue.isEmpty Schedule end
+Schedule -> FloorQueue: add Request to FloorQueue
+FloorQueue -> Elevator: if stop=true && queue.isEmpty Elevator end
+@enduml
